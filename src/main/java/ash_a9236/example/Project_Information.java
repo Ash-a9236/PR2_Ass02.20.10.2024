@@ -4,9 +4,8 @@ public class Project_Information {
 /*
     Create a Java application that models a Ride-Sharing System.
 
-    EXPECTED OUTPUT
 ------------------------------------------------------------------------------------------------------------
-
+    EXPECTED OUTPUT :
     _____________________________________________________________
     | Welcome to the Ride-Sharing System!                       |
     | Thank you for trusting us.                                |
@@ -34,8 +33,6 @@ public class Project_Information {
     |___________________________________________________________|
 
 ------------------------------------------------------------------------------------------------------------
-
-
     This application should manage
         - drivers
         - riders
