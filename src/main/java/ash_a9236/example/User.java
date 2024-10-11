@@ -10,7 +10,7 @@ package ash_a9236.example;
              displayInfo(): Displays information specific to each user type.
  */
 public abstract class User {
-    public static int count = 100;
+    public static int count = 1;
     private final String userID;
     private final String name;
 
