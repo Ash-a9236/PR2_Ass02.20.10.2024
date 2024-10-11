@@ -59,14 +59,6 @@ public class Project_Information {
              The RideSharingSystem class will act as the main system that manages drivers, riders, and ride requests.
 
         2. Classes and Methods:
-             Class User:
-                     Represents a generic user in the system.
-                     Contains attributes:
-                         userID: Unique identifier for the user.
-                         name: Name of the user.
-
-                     Abstract method:
-                         displayInfo(): Displays information specific to each user type.
              Class Driver:
                      Represents a driver in the system.
                      Contains additional attributes:
