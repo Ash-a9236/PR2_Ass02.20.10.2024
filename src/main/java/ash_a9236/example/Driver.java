@@ -27,9 +27,25 @@ public class Driver extends User {
         this.vehicle = vehicle;
     }
 
+    /**
+     * Displays on the console the Driver information
+     * @param name the driver's name
+     * @param userID the driver's ID
+     */
     @Override
     void displayInfo(String name, String userID) {
         System.out.printf("DRIVER\n    User ID : %d\n    Name : %d\n    Vehicle : %d\n     Availability : %d",
                 userID, name, vehicle, isAvailable);
     }
+
+    public boolean acceptRide() {
+        return isAvailable = false;
+    }
+
+    public boolean completedRide() {
+        //TODO : if (ride == "completed") {}
+
+        return isAvailable = true;
+    }
+
 }
