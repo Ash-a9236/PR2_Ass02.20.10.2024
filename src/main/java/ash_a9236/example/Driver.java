@@ -1,6 +1,4 @@
 package ash_a9236.example;
-
-public class Driver extends User {
 /*
  Class Driver:
          Represents a driver in the system.
@@ -13,15 +11,25 @@ public class Driver extends User {
              acceptRide(): Changes isAvailable to false when the driver accepts a ride.
              completeRide(): Changes isAvailable back to true once the ride is completed.
              Override displayInfo(): Displays detailed driver information, including vehicle and
-                availability.
+    availability.
  */
 
-    protected Driver(String userID, String name) {
+public class Driver extends User {
+    private String location;
+    private boolean isAvailable;
+    private String vehicle;
+
+
+    protected Driver(String userID, String name, String location, boolean isAvailable, String vehicle) {
         super(userID, name);
+        this.location = location;
+        this.isAvailable = isAvailable;
+        this.vehicle = vehicle;
     }
 
     @Override
     void displayInfo(String name, String userID) {
-        System.out.printf("DRIVER\n    User ID : %d\n    Name : %d", userID, name);
+        System.out.printf("DRIVER\n    User ID : %d\n    Name : %d\n    Vehicle : %d\n     Availability : %d",
+                userID, name, vehicle, isAvailable);
     }
 }
