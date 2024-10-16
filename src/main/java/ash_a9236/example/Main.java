@@ -23,5 +23,9 @@ ________________________________________________________________________________
 public class Main {
     public static void main(String[] args) {
 
+        //to create a new rider
+
+        System.out.println("Please enter the rider's name");
+
     }
 }

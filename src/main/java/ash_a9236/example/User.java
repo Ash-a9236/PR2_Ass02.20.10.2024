@@ -21,4 +21,20 @@ public abstract class User {
     }
 
     abstract void displayInfo(String name, String userID);
+
+    public String getName() {
+        return name;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        User.count = count;
+    }
 }
