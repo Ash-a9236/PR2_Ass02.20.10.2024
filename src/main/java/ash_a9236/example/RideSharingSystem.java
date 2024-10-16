@@ -48,6 +48,20 @@ public class RideSharingSystem {
         return null;
     }
 
+    /**
+     * Finds a driver in the system through their unique ID
+     * @param userID the user ID
+     * @return the driver if there is one with the ID or null if there is none
+     */
+    private Driver findDriver(String userID) {
+        for (Driver driver : drivers) {
+            if (driver.getUserID() == userID) {
+                return driver;
+            }
+        }
+        return null;
+    }
+
 
 
 }
