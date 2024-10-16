@@ -17,7 +17,7 @@ public class Rider extends User {
     private String pickupLocation;
     private String dropoffLocation;
 
-    protected Rider(String userID, String name, String pickupLocation, String dropoffLocation) {
+    protected Rider(int userID, String name, String pickupLocation, String dropoffLocation) {
         super(userID, name);
         this.pickupLocation = pickupLocation;
         this.dropoffLocation = dropoffLocation;
@@ -29,8 +29,8 @@ public class Rider extends User {
      * @param userID the rider's ID
      */
     @Override
-    void displayInfo(String name, String userID) {
-        System.out.printf("RIDER\n    User ID : %d\n    Name : %d\n    Pickup : %d\n    Dropoff : %d",
+    void displayInfo(String name, int userID) {
+        System.out.printf("RIDER\n    User ID : %d\n    Name : %s\n    Pickup : %s\n    Dropoff : %s",
                 userID, name, pickupLocation, dropoffLocation);
     }
 

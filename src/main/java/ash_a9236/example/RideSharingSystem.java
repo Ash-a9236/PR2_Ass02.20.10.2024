@@ -1,6 +1,7 @@
 package ash_a9236.example;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /*
  Class RideSharingSystem:
@@ -61,6 +62,32 @@ public class RideSharingSystem {
         }
         return null;
     }
+
+    public void addRider() {
+        Scanner console = new Scanner(System.in);
+        System.out.println("Please input the new Rider's ID");
+
+    }
+
+
+    /*
+        public void addStudent() {
+        Scanner console = new Scanner(System.in);
+        System.out.println("Please input the student roll number");
+        int rollNumber = console.nextInt();
+        String extraLine = console.nextLine();
+
+        if (findStudent(rollNumber) == null) {
+            System.out.println("Input the student's full name : ");
+            String name = console.nextLine();
+            students.add(new Student(name, rollNumber));
+            System.out.println("Student added successfully.");
+        } else {
+            System.out.println("Student No " + rollNumber + " already exists in the system");
+        }
+    }
+     */
+
 
 
 

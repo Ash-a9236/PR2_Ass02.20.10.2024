@@ -20,7 +20,7 @@ public class Driver extends User {
     private String vehicle;
 
 
-    protected Driver(String userID, String name, String location, boolean isAvailable, String vehicle) {
+    protected Driver(int userID, String name, String location, boolean isAvailable, String vehicle) {
         super(userID, name);
         this.location = location;
         this.isAvailable = isAvailable;
@@ -33,8 +33,8 @@ public class Driver extends User {
      * @param userID the driver's ID
      */
     @Override
-    void displayInfo(String name, String userID) {
-        System.out.printf("DRIVER\n    User ID : %d\n    Name : %d\n    Vehicle : %d\n     Availability : %d",
+    void displayInfo(String name, int userID) {
+        System.out.printf("DRIVER\n    User ID : %d\n    Name : %s\n    Vehicle : %s\n     Availability : %s",
                 userID, name, vehicle, isAvailable);
     }
 
