@@ -26,44 +26,27 @@ import java.util.ArrayList;
 
  */
 public class RideSharingSystem {
-    private ArrayList<Rider> Rider;
-    private ArrayList<Driver> Driver;
+    private ArrayList<Rider> riders;
+    private ArrayList<Driver> drivers;
 
     public RideSharingSystem() {
-        Rider = new ArrayList<>();
-        Driver = new ArrayList<>();
-    }
-
-//    private Rider findRider(String userID) {
-//        for (Rider rider : riders) {
-//            if (rider.get)
-//        }
-//    }
-
-    /*
-        private Student findStudent(int rollNumber) {
-        for (Student student : students) {
-            if (student.getRollNumber() == rollNumber) {
-                return student;
-            }
-        }
-        return null;
+        riders = new ArrayList<>();
+        drivers = new ArrayList<>();
     }
 
     /**
-     * Finds a book in the system through their unique ID
-     * @param bookID the book's ID
-     * @return the book if there is already a book with that ID in the system or null if there aren't
+     * Finds a rider in the system through their unique ID
+     * @param userID the user ID
+     * @return the rider if there is already one with the ID or null if there is none
      */
-   /* private Book findBook(String bookID) {
-        for (Book book : books) {
-            if (bookID.equalsIgnoreCase(book.getBookID())) {
-                return book;
+    private Rider findRider(String userID) {
+        for (Rider rider : riders) {
+            if (rider.getUserID() == userID) {
+              return rider;
             }
         }
         return null;
     }
-     */
 
 
 
