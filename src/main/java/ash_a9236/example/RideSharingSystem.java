@@ -40,7 +40,7 @@ public class RideSharingSystem {
      * @param userID the user ID
      * @return the rider if there is already one with the ID or null if there is none
      */
-    private Rider findRider(String userID) {
+    private Rider findRider(int userID) {
         for (Rider rider : riders) {
             if (rider.getUserID() == userID) {
               return rider;
@@ -54,7 +54,7 @@ public class RideSharingSystem {
      * @param userID the user ID
      * @return the driver if there is one with the ID or null if there is none
      */
-    private Driver findDriver(String userID) {
+    private Driver findDriver(int userID) {
         for (Driver driver : drivers) {
             if (driver.getUserID() == userID) {
                 return driver;
@@ -65,30 +65,43 @@ public class RideSharingSystem {
 
     public void addRider() {
         Scanner console = new Scanner(System.in);
-        System.out.println("Please input the new Rider's ID");
+        System.out.println("Please input the new Rider's ID : ");
+        int userID = console.nextInt();
+        String junkLine = console.nextLine();
 
-    }
-
-
-    /*
-        public void addStudent() {
-        Scanner console = new Scanner(System.in);
-        System.out.println("Please input the student roll number");
-        int rollNumber = console.nextInt();
-        String extraLine = console.nextLine();
-
-        if (findStudent(rollNumber) == null) {
-            System.out.println("Input the student's full name : ");
+        if (findRider(userID) == null) {
+            System.out.println("Please input the rider's full name : ");
             String name = console.nextLine();
-            students.add(new Student(name, rollNumber));
-            System.out.println("Student added successfully.");
+            System.out.println("Please input the pickup location : ");
+            String pickupLoc = console.nextLine();
+            System.out.println("Please input the dropoff location : ");
+            String dropoffLoc = console.nextLine();
+
+            riders.add(new Rider(userID, name, pickupLoc, dropoffLoc));
+            System.out.println("Rider added successfully.");
         } else {
-            System.out.println("Student No " + rollNumber + " already exists in the system");
+            System.out.println("Rider userID " + userID + "is already in the system.");
         }
     }
-     */
 
+    public void addDriver() {
+        Scanner console = new Scanner(System.in);
+        System.out.println("Please input the new driver's ID : ");
+        int userID = console.nextInt();
+        String junkLine = console.nextLine();
 
+        if (findDriver(userID) == null) {
+            System.out.println("Please input the driver's full name : ");
+            String name = console.nextLine();
+            System.out.println("Please input your location : ");
+            String location = console.nextLine();
+            System.out.println("Please input your vehicle : ");
+            String vehicle = console.nextLine();
 
-
+            drivers.add(new Driver(userID, name, location, true, vehicle));
+            System.out.println("Driver added successfully.");
+        } else {
+            System.out.println("Driver userID " + userID + "is already in the system.");
+        }
+    }
 }
