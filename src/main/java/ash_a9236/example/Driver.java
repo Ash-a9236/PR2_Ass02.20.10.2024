@@ -14,6 +14,8 @@ package ash_a9236.example;
     availability.
  */
 
+import java.util.Scanner;
+
 public class Driver extends User {
     private String location;
     private boolean isAvailable;
@@ -39,8 +41,16 @@ public class Driver extends User {
     }
 
     public boolean acceptRide() {
-        return isAvailable = false;
+        Scanner console = new Scanner(System.in);
+        System.out.println("Do you want to accept the ride ? \n(Y/N)");
+        String answer = console.next();
+        if (answer.toLowerCase() == "y") {
+            isAvailable = false;
+            return true;
+        }
+        return false;
     }
+
 
     public boolean completedRide() {
         //TODO : if (ride == "completed") {}

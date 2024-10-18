@@ -104,4 +104,26 @@ public class RideSharingSystem {
             System.out.println("Driver userID " + userID + "is already in the system.");
         }
     }
+
+  /*
+    requestRide(String riderID): Finds the rider by ID and initiates a ride request, attempting to match them with an
+    available driver nearby.
+
+    Note: Your class should have a reasonable set of accessor and mutator methods, constructors,
+    equals method, and toString method, whether or not your program uses them. You can add other
+    methods if you wish.
+   */
+
+    public void requestRide(int riderID) {
+        System.out.println("Attempting to match " + riderID + " with an available driver... ");
+        for (Driver driver : drivers) {
+            if (driver.getLocation() == findRider(riderID).getPickupLocation()) {
+                findDriver(driver)
+            }
+        }
+    }
+
+
+
+
 }

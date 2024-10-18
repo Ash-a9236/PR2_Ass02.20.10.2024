@@ -28,4 +28,8 @@ public abstract class User {
     public int getUserID() {
         return userID;
     }
+
+    public String getNameViaID(int userID) {
+        return getName();
+    }
 }

@@ -1,4 +1,7 @@
 package ash_a9236.example;
+
+import java.util.Scanner;
+
 /*
  Class Rider:
          Represents a rider in the system.
@@ -32,6 +35,10 @@ public class Rider extends User {
     void displayInfo(String name, int userID) {
         System.out.printf("RIDER\n    User ID : %d\n    Name : %s\n    Pickup : %s\n    Dropoff : %s",
                 userID, name, pickupLocation, dropoffLocation);
+    }
+
+    public String getNameThroughID(int userID) {
+        return getNameViaID(userID);
     }
 
 

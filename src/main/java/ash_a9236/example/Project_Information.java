@@ -141,5 +141,15 @@ public class Project_Information {
                     location is unavailable, the system should throw an exception indicating that no drivers are available.
 
 
+
+
+                Figuring out the TO DO list :
+                - Figure out location (if locations = are the same = location close, we can accept the ride)
+                - RequestRide()
+                    - ask the driver to accept or not the ride..?
+                    - put rider unavailable
+
+
+
 */
 }
