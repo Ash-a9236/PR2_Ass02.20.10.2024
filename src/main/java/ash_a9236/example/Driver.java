@@ -36,7 +36,7 @@ public class Driver extends User {
      * @param userID the driver's ID
      */
     @Override
-    void displayInfo(String name, int userID) {
+    public void displayInfo(String name, int userID) {
         System.out.println("DRIVER" +
                 "\n    User ID : " + userID +
                 "\n    Name : " + name +

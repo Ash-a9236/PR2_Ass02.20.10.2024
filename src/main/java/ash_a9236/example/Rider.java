@@ -37,7 +37,7 @@ public class Rider extends User {
      * @param userID the rider's ID
      */
     @Override
-    void displayInfo(String name, int userID) {
+    public void displayInfo(String name, int userID) {
         System.out.printf("RIDER\n    User ID : %d\n    Name : %s\n    Pickup : %s\n    Dropoff : %s",
                 userID, name, pickupLocation, dropoffLocation);
     }

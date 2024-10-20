@@ -43,7 +43,7 @@ public class RideSharingSystem {
      * @param userID the user ID
      * @return the driver if there is one with the ID or null if there is none
      */
-    private Driver findDriver(int userID) {
+    public Driver findDriver(int userID) {
         for (Driver driver : drivers) {
             if (driver.getUserID() == userID) {
                 return driver;
@@ -52,7 +52,7 @@ public class RideSharingSystem {
         return null;
     }
 
-    private String displayDriverName(int userID) {
+    public String displayDriverName(int userID) {
         for (Driver driver : drivers) {
             if (driver.getUserID() == userID) {
                 return driver.getName();
@@ -61,33 +61,37 @@ public class RideSharingSystem {
         return "Driver not found";
     }
 
-    public void addDriver() {
-        Scanner console = new Scanner(System.in);
-        System.out.println("Please input the new driver's ID : ");
-        int userID = console.nextInt();
-        String junkLine = console.nextLine();
-
-        if (findDriver(userID) == null) {
-            System.out.println("Please input the driver's full name : ");
-            String name = console.nextLine();
-            System.out.println("Please input your location : ");
-            String location = console.nextLine();
-            System.out.println("Please input your vehicle : ");
-            String vehicle = console.nextLine();
-            System.out.println("Are you available at the moment ? \n(Y/N)");
-            String answer = console.next();
-            Boolean isAvailable = false;
-
-            if (answer.toUpperCase().equals("Y")) {
-                isAvailable = true;
-            }
-
-            drivers.add(new Driver(userID, name, location, isAvailable, vehicle));
-            System.out.println("Driver added successfully.");
-        } else {
-            System.out.println("Driver userID " + userID + "is already in the system.");
-        }
+    public void addDriver(Driver driver) {
+        drivers.add(driver);
     }
+
+//    public void addDriver() {
+//        Scanner console = new Scanner(System.in);
+//        System.out.println("Please input the new driver's ID : ");
+//        int userID = console.nextInt();
+//        String junkLine = console.nextLine();
+//
+//        if (findDriver(userID) == null) {
+//            System.out.println("Please input the driver's full name : ");
+//            String name = console.nextLine();
+//            System.out.println("Please input your location : ");
+//            String location = console.nextLine();
+//            System.out.println("Please input your vehicle : ");
+//            String vehicle = console.nextLine();
+//            System.out.println("Are you available at the moment ? \n(Y/N)");
+//            String answer = console.next();
+//            Boolean isAvailable = false;
+//
+//            if (answer.toUpperCase().equals("Y")) {
+//                isAvailable = true;
+//            }
+//
+//            drivers.add(new Driver(userID, name, location, isAvailable, vehicle));
+//            System.out.println("Driver added successfully.");
+//        } else {
+//            System.out.println("Driver userID " + userID + "is already in the system.");
+//        }
+//    }
 /*----------------------------------------------------------------------------------------------------------------------
     RIDER-CLASS RELATED METHODS
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -96,7 +100,7 @@ public class RideSharingSystem {
      * @param userID the user ID
      * @return the rider if there is already one with the ID or null if there is none
      */
-    private Rider findRider(int userID) {
+    public Rider findRider(int userID) {
         for (Rider rider : riders) {
             if (rider.getUserID() == userID) {
               return rider;
@@ -105,7 +109,7 @@ public class RideSharingSystem {
         return null;
     }
 
-    private String displayRiderName(int userID) {
+    public String displayRiderName(int userID) {
         for (Rider rider : riders) {
             if (rider.getUserID() == userID) {
                 return rider.getName();
@@ -114,26 +118,30 @@ public class RideSharingSystem {
         return "Rider not found";
     }
 
-    public void addRider() {
-        Scanner console = new Scanner(System.in);
-        System.out.println("Please input the new Rider's ID : ");
-        int userID = console.nextInt();
-        String junkLine = console.nextLine();
-
-        if (findRider(userID) == null) {
-            System.out.println("Please input the rider's full name : ");
-            String name = console.nextLine();
-            System.out.println("Please input the pickup location : ");
-            String pickupLoc = console.nextLine();
-            System.out.println("Please input the dropoff location : ");
-            String dropoffLoc = console.nextLine();
-
-            riders.add(new Rider(userID, name, pickupLoc, dropoffLoc));
-            System.out.println("Rider added successfully.");
-        } else {
-            System.out.println("Rider userID " + userID + "is already in the system.");
-        }
+    public void addRider(Rider rider) {
+        riders.add(rider);
     }
+
+//    public void addRider() {
+//        Scanner console = new Scanner(System.in);
+//        System.out.println("Please input the new Rider's ID : ");
+//        int userID = console.nextInt();
+//        String junkLine = console.nextLine();
+//
+//        if (findRider(userID) == null) {
+//            System.out.println("Please input the rider's full name : ");
+//            String name = console.nextLine();
+//            System.out.println("Please input the pickup location : ");
+//            String pickupLoc = console.nextLine();
+//            System.out.println("Please input the dropoff location : ");
+//            String dropoffLoc = console.nextLine();
+//
+//            riders.add(new Rider(userID, name, pickupLoc, dropoffLoc));
+//            System.out.println("Rider added successfully.");
+//        } else {
+//            System.out.println("Rider userID " + userID + "is already in the system.");
+//        }
+//    }
 
 /*----------------------------------------------------------------------------------------------------------------------
     CLASS RELATED METHODS
@@ -168,12 +176,13 @@ public class RideSharingSystem {
                             + driver.getName() + ">...");
                     driver.setAvailable(false);
                     System.out.println("Driver status updated to <unavailable>\n\nHave a safe ride\nSee you soon !");
+                    return;
                 } else if (answer.toUpperCase().equals("N")) {
-                    throw new RideRejectedException("Ride request rejected by " + displayRiderName(riderID));
+                    throw new RideRejectedException("\n\nRide request rejected by " + displayRiderName(riderID) + "\n\n");
                 }
             } else {
-                throw new NoAvailableDriverException("No available drivers at your location for the moment...\n" +
-                        "Try again later !");
+                throw new NoAvailableDriverException("\n\nNo available drivers at your location for the moment...\n" +
+                        "Try again later !\n\n");
             }
         }
     }
