@@ -24,40 +24,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws RideRejectedException, NoAvailableDriverException {
 
-/*
-TO DO
- CASES
-    - add driver
-    - add rider
-    - request a ride (which rider, ask if pickup location is good, attempt to match)
-    _____________________________________________________________
-    | Welcome to the Ride-Sharing System!                       |
-    | Thank you for trusting us.                                |
-    | ------------------------------------                      |
-    |                                                           |
-    | Driver Details :                                          |
-    |     Name : Alex                                           |
-    |     Location : Downtown                                   |
-    |     Vehicle : Toyota RAV4                                 |
-    |     Availability : Available                              |
-    |                                                           |
-    | Rider Details :                                           |
-    |     Name : John                                           |
-    |     Pickup Location : Downtown                            |
-    |     Drop-off Location : Airport YUL                       |
-    |                                                           |
-    | Attempting to match John with an available driver...      |
-    |                                                           |
-    | Alex has accepted the ride!                               |
-    | Ride accepted by <Alex>...                                |
-    | Driver status updated to <unavailable>                    |
-    |                                                           |
-    | Have a safe ride!                                         |
-    | See you soon!                                             |
-    |___________________________________________________________|
-
-------------------------------------------------------------------------------------------------------------
- */
         RideSharingSystem system = new RideSharingSystem();
         Scanner console = new Scanner(System.in);
         system.addRider(new Rider(101, "John", "Downtown", "Airport YUL"));
@@ -98,6 +64,5 @@ TO DO
         catch (NullPointerException npe) {
             System.out.println("No user ID matches");
         }
-
     }
 }

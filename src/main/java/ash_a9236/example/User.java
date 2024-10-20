@@ -1,14 +1,5 @@
 package ash_a9236.example;
-/*
- Class User:
-         Represents a generic user in the system.
-         Contains attributes:
-             userID: Unique identifier for the user.
-             name: Name of the user.
 
-         Abstract method:
-             displayInfo(): Displays information specific to each user type.
- */
 public abstract class User {
     private final int userID;
     private final String name;

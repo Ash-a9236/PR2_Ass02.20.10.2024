@@ -1,22 +1,5 @@
 package ash_a9236.example;
 
-import java.util.List;
-import java.util.Scanner;
-
-/*
- Class Rider:
-         Represents a rider in the system.
-         Contains additional attributes:
-             pickupLocation: Location where the rider requests to be picked up.
-             dropOffLocation: Desired drop-off location.
-
-         Methods:
-         requestRide(List<Driver> drivers): Attempts to match the rider with an available driver based on
-           location. Throws:
-             NoAvailableDriverException: Thrown if no drivers are available for the requested ride.
-             RideRejectedException: Thrown if the driver rejects the ride request.
-         Override displayInfo(): Displays detailed rider information, including pickup and drop-off locations.
- */
 public class Rider extends User {
     private String pickupLocation;
     private String dropoffLocation;
@@ -27,9 +10,8 @@ public class Rider extends User {
         this.dropoffLocation = dropoffLocation;
     }
 
-
 /*----------------------------------------------------------------------------------------------------------------------
-@OVERRIDE FROM <USER>
+    @OVERRIDE FROM <USER>
 ----------------------------------------------------------------------------------------------------------------------*/
     /**
      * Displays on the console the riders information
@@ -41,11 +23,6 @@ public class Rider extends User {
         System.out.printf("RIDER\n    User ID : %d\n    Name : %s\n    Pickup : %s\n    Dropoff : %s",
                 userID, name, pickupLocation, dropoffLocation);
     }
-
-
-/*----------------------------------------------------------------------------------------------------------------------
-    CLASS METHODS
-----------------------------------------------------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------------------------------------------------
     GETTERS AND SETTERS

@@ -44,26 +44,9 @@ public class Driver extends User {
                 "\n    Availability : " + (isAvailable ? "Available" : "Unavailable"));
     }
 
-
-
 /*----------------------------------------------------------------------------------------------------------------------
     CLASS METHODS
 ----------------------------------------------------------------------------------------------------------------------*/
-//    public boolean acceptRide() {
-//        Scanner console = new Scanner(System.in);
-//        System.out.println("Do you want to accept the ride ? \n(Y/N)");
-//        String answer = console.next();
-//        if (answer.toUpperCase().equals("Y")) {
-//            isAvailable = false;
-//            return true;
-//        }
-//        return false;
-//    }
-//
-//    public boolean Driving(){
-//
-//        return true;
-//    }
 
     public void acceptedRide() {
         isAvailable = false;
