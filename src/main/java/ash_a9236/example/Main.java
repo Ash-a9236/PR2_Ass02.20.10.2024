@@ -29,8 +29,6 @@ TO DO
     - add driver
     - add rider
     - request a ride (which rider, ask if pickup location is good, attempt to match)
-    - display riders
-
 
  */
     }

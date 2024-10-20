@@ -14,20 +14,16 @@ package ash_a9236.example;
     availability.
  */
 
-import java.util.Scanner;
-
 public class Driver extends User {
     private String location;
     private boolean isAvailable;
-    private boolean isDriving;
     private String vehicle;
 
 
-    protected Driver(int userID, String name, String location, boolean isAvailable, boolean isDriving, String vehicle) {
+    protected Driver(int userID, String name, String location, boolean isAvailable, String vehicle) {
         super(userID, name);
         this.location = location;
         this.isAvailable = isAvailable;
-        this.isDriving = isDriving;
         this.vehicle = vehicle;
     }
 
@@ -41,8 +37,11 @@ public class Driver extends User {
      */
     @Override
     void displayInfo(String name, int userID) {
-        System.out.printf("DRIVER\n    User ID : %d\n    Name : %s\n    Vehicle : %s\n     Availability : %s",
-                userID, name, vehicle, isAvailable);
+        System.out.println("DRIVER" +
+                "\n    User ID : " + userID +
+                "\n    Name : " + name +
+                "\n    Vehicle : " + vehicle +
+                "\n    Availability : " + (isAvailable ? "Available" : "Unavailable"));
     }
 
 
@@ -50,26 +49,27 @@ public class Driver extends User {
 /*----------------------------------------------------------------------------------------------------------------------
     CLASS METHODS
 ----------------------------------------------------------------------------------------------------------------------*/
-    public boolean acceptRide() {
-        Scanner console = new Scanner(System.in);
-        System.out.println("Do you want to accept the ride ? \n(Y/N)");
-        String answer = console.next();
-        if (answer.toUpperCase().equals("Y")) {
-            isAvailable = false;
-            return true;
-        }
-        return false;
+//    public boolean acceptRide() {
+//        Scanner console = new Scanner(System.in);
+//        System.out.println("Do you want to accept the ride ? \n(Y/N)");
+//        String answer = console.next();
+//        if (answer.toUpperCase().equals("Y")) {
+//            isAvailable = false;
+//            return true;
+//        }
+//        return false;
+//    }
+//
+//    public boolean Driving(){
+//
+//        return true;
+//    }
+
+    public void acceptedRide() {
+        isAvailable = false;
     }
-
-    public boolean Driving(){
-
-        return true;
-    }
-
 
     public boolean completedRide() {
-        //TODO : if (ride == "completed") {}
-
         return isAvailable = true;
     }
 

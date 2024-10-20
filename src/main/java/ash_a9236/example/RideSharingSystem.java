@@ -82,7 +82,7 @@ public class RideSharingSystem {
                 isAvailable = true;
             }
 
-            drivers.add(new Driver(userID, name, location, isAvailable, false, vehicle));
+            drivers.add(new Driver(userID, name, location, isAvailable, vehicle));
             System.out.println("Driver added successfully.");
         } else {
             System.out.println("Driver userID " + userID + "is already in the system.");
@@ -153,7 +153,17 @@ public class RideSharingSystem {
         System.out.println("Attempting to match " + riderID + " with an available driver... ");
         for (Driver driver : drivers) {
             if (driver.getLocation().equals(findRider(riderID).getPickupLocation())) {
-                //ask the driver if they want to take the ride
+                System.out.println("RIDER \nDo you want to accept the ride ? \n(Y/N)");
+                String answer = console.next();
+
+                if (answer.toUpperCase().equals("Y")) {
+                    System.out.println(driver.getName() + " has accepted the ride !\n" + "Ride accepted by <"
+                            + driver.getName() + ">...");
+                    driver.setAvailable(false);
+                    System.out.println("Driver status updated to <unavailable>\n\nHave a safe ride\nSee you soon !");
+                } else if (answer.toUpperCase().equals("N")) {
+
+                }
             }
         }
     }
