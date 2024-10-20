@@ -98,7 +98,7 @@ public class RideSharingSystem {
             System.out.println("Please input your vehicle : ");
             String vehicle = console.nextLine();
 
-            drivers.add(new Driver(userID, name, location, true, vehicle));
+            drivers.add(new Driver(userID, name, location, true, false, vehicle));
             System.out.println("Driver added successfully.");
         } else {
             System.out.println("Driver userID " + userID + "is already in the system.");
@@ -115,15 +115,43 @@ public class RideSharingSystem {
    */
 
     public void requestRide(int riderID) {
+        Scanner console = new Scanner(System.in);
         System.out.println("Attempting to match " + riderID + " with an available driver... ");
         for (Driver driver : drivers) {
-            if (driver.getLocation() == findRider(riderID).getPickupLocation()) {
-                findDriver(driver)
+            if (driver.getLocation().equals(findRider(riderID).getPickupLocation())) {
+                //ask the driver if they want to take the ride
             }
         }
     }
 
+    private String displayRiderName(int userID) {
+        for (Rider rider : riders) {
+            if (rider.getUserID() == userID) {
+                return rider.getName();
+            }
+        }
+        return "Rider not found";
+    }
 
+    private String displayDriverName(int userID) {
+        for (Driver driver : drivers) {
+            if (driver.getUserID() == userID) {
+                return driver.getName();
+            }
+        }
+        return "Driver not found";
+    }
+
+
+
+
+    /*
+     requestRide(String riderID): Finds the rider by ID and initiates a ride request, attempting
+    to match them with an available driver nearby.
+    Note: Your class should have a reasonable set of accessor and mutator methods, constructors,
+    equals method, and toString method, whether or not your program uses them. You can add other
+    methods if you wish.
+     */
 
 
 }
