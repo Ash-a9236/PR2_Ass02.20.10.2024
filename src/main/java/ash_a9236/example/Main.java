@@ -23,9 +23,15 @@ ________________________________________________________________________________
 public class Main {
     public static void main(String[] args) {
 
-        //to create a new rider
+/*
+TO DO
+ CASES
+    - add driver
+    - add rider
+    - request a ride (which rider, ask if pickup location is good, attempt to match)
+    - display riders
 
-        System.out.println("Please enter the rider's name");
 
+ */
     }
 }

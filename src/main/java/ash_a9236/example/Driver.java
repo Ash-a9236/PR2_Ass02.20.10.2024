@@ -19,16 +19,21 @@ import java.util.Scanner;
 public class Driver extends User {
     private String location;
     private boolean isAvailable;
+    private boolean isDriving;
     private String vehicle;
 
 
-    protected Driver(int userID, String name, String location, boolean isAvailable, String vehicle) {
+    protected Driver(int userID, String name, String location, boolean isAvailable, boolean isDriving, String vehicle) {
         super(userID, name);
         this.location = location;
         this.isAvailable = isAvailable;
+        this.isDriving = isDriving;
         this.vehicle = vehicle;
     }
 
+/*----------------------------------------------------------------------------------------------------------------------
+    @OVERRIDE FROM <USER>
+----------------------------------------------------------------------------------------------------------------------*/
     /**
      * Displays on the console the Driver information
      * @param name the driver's name
@@ -40,15 +45,25 @@ public class Driver extends User {
                 userID, name, vehicle, isAvailable);
     }
 
+
+
+/*----------------------------------------------------------------------------------------------------------------------
+    CLASS METHODS
+----------------------------------------------------------------------------------------------------------------------*/
     public boolean acceptRide() {
         Scanner console = new Scanner(System.in);
         System.out.println("Do you want to accept the ride ? \n(Y/N)");
         String answer = console.next();
-        if (answer.toLowerCase() == "y") {
+        if (answer.toUpperCase().equals("Y")) {
             isAvailable = false;
             return true;
         }
         return false;
+    }
+
+    public boolean Driving(){
+
+        return true;
     }
 
 
@@ -58,6 +73,10 @@ public class Driver extends User {
         return isAvailable = true;
     }
 
+
+/*----------------------------------------------------------------------------------------------------------------------
+    GETTERS AND SETTERS
+----------------------------------------------------------------------------------------------------------------------*/
     public String getLocation() {
         return location;
     }

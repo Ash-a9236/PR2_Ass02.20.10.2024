@@ -26,6 +26,10 @@ public class Rider extends User {
         this.dropoffLocation = dropoffLocation;
     }
 
+
+/*----------------------------------------------------------------------------------------------------------------------
+@OVERRIDE FROM <USER>
+----------------------------------------------------------------------------------------------------------------------*/
     /**
      * Displays on the console the riders information
      * @param name the rider's name
@@ -37,11 +41,15 @@ public class Rider extends User {
                 userID, name, pickupLocation, dropoffLocation);
     }
 
-    public String getNameThroughID(int userID) {
-        return getNameViaID(userID);
-    }
+
+/*----------------------------------------------------------------------------------------------------------------------
+    CLASS METHODS
+----------------------------------------------------------------------------------------------------------------------*/
 
 
+/*----------------------------------------------------------------------------------------------------------------------
+    GETTERS AND SETTERS
+----------------------------------------------------------------------------------------------------------------------*/
     public String getPickupLocation() {
         return pickupLocation;
     }
