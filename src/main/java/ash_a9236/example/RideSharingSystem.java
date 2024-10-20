@@ -92,7 +92,6 @@ public class RideSharingSystem {
 /*----------------------------------------------------------------------------------------------------------------------
     CLASS RELATED METHODS
 ----------------------------------------------------------------------------------------------------------------------*/
-
     /**
      * Requests a ride to all the drivers in the system. If one is near, asks the driver if they want to take the drive.
      * @param riderID the rider requesting the ride
