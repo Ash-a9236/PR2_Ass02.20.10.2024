@@ -1,7 +1,5 @@
 package ash_a9236.example;
 
-
-
 /*______________________________________________________________________________________________________________________
 
 Assignment 02
@@ -11,11 +9,11 @@ For Programming 2 Section 00002 - Fall 2024
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 Explanation :
 
-    [
-        .
-        .
-        .
-    ]
+    This project is a ride-sharing system that links Riders and Drivers together. It checks if there are Drivers around
+    the area of a rider when they request a ride and proposes the ride to the driver.
+
+    The program also checks if the rider and the driver are in the system and throws the appropriate exception when
+    something goes wrong.
 ______________________________________________________________________________________________________________________*/
 
 

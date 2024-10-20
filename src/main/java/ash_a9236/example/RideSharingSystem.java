@@ -29,6 +29,11 @@ public class RideSharingSystem {
         return null;
     }
 
+    /**
+     * Shows the name associated with the driver's ID
+     * @param userID the input driver's user ID
+     * @return the name of the associated driver
+     */
     public String displayDriverName(int userID) {
         for (Driver driver : drivers) {
             if (driver.getUserID() == userID) {
@@ -38,6 +43,10 @@ public class RideSharingSystem {
         return "Driver not found";
     }
 
+    /**
+     * Adds a driver to the system
+     * @param driver the new driver
+     */
     public void addDriver(Driver driver) {
         drivers.add(driver);
     }
@@ -58,7 +67,11 @@ public class RideSharingSystem {
         }
         return null;
     }
-
+    /**
+     * Shows the name associated with the rider's ID
+     * @param userID the input rider's user ID
+     * @return the name of the associated rider
+     */
     public String displayRiderName(int userID) {
         for (Rider rider : riders) {
             if (rider.getUserID() == userID) {
@@ -68,6 +81,10 @@ public class RideSharingSystem {
         return "Rider not found";
     }
 
+    /**
+     * adds a rider to the system
+     * @param rider the new rider
+     */
     public void addRider(Rider rider) {
         riders.add(rider);
     }
@@ -76,6 +93,12 @@ public class RideSharingSystem {
     CLASS RELATED METHODS
 ----------------------------------------------------------------------------------------------------------------------*/
 
+    /**
+     * Requests a ride to all the drivers in the system. If one is near, asks the driver if they want to take the drive.
+     * @param riderID the rider requesting the ride
+     * @throws NoAvailableDriverException when no driver is available in the area
+     * @throws RideRejectedException when a driver rejected the ride request
+     */
     public void requestRide(int riderID) throws NoAvailableDriverException, RideRejectedException {
         Scanner console = new Scanner(System.in);
         System.out.println("\nAttempting to match " + findRider(riderID) + " with an available driver... \n");

@@ -48,10 +48,17 @@ public class Driver extends User {
     CLASS METHODS
 ----------------------------------------------------------------------------------------------------------------------*/
 
+    /**
+     * When a driver accepts a ride, his availability changes to false
+     */
     public void acceptedRide() {
         isAvailable = false;
     }
 
+    /**
+     * puts a driver back into available when the ride is done
+     * @return sets his availability back to false
+     */
     public boolean completedRide() {
         return isAvailable = true;
     }
