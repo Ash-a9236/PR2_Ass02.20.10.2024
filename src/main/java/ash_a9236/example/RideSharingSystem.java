@@ -146,9 +146,16 @@ public class RideSharingSystem {
     Note: Your class should have a reasonable set of accessor and mutator methods, constructors,
     equals method, and toString method, whether or not your program uses them. You can add other
     methods if you wish.
+
+     public void requestRide(List<Driver> drivers) throws NoAvailableDriverException, RideRejectedException {
+        for (Driver driver : drivers) {
+
+        }
+    }
+
    */
 
-    public void requestRide(int riderID) {
+    public void requestRide(int riderID) throws NoAvailableDriverException, RideRejectedException {
         Scanner console = new Scanner(System.in);
         System.out.println("Attempting to match " + riderID + " with an available driver... ");
         for (Driver driver : drivers) {
@@ -162,8 +169,11 @@ public class RideSharingSystem {
                     driver.setAvailable(false);
                     System.out.println("Driver status updated to <unavailable>\n\nHave a safe ride\nSee you soon !");
                 } else if (answer.toUpperCase().equals("N")) {
-
+                    throw new RideRejectedException("Ride request rejected by " + displayRiderName(riderID));
                 }
+            } else {
+                throw new NoAvailableDriverException("No available drivers at your location for the moment...\n" +
+                        "Try again later !");
             }
         }
     }

@@ -1,5 +1,6 @@
 package ash_a9236.example;
 
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -46,7 +47,6 @@ public class Rider extends User {
     CLASS METHODS
 ----------------------------------------------------------------------------------------------------------------------*/
 
-
 /*----------------------------------------------------------------------------------------------------------------------
     GETTERS AND SETTERS
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -65,4 +65,5 @@ public class Rider extends User {
     public void setDropoffLocation(String dropoffLocation) {
         this.dropoffLocation = dropoffLocation;
     }
+
 }
