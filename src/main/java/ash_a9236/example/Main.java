@@ -99,8 +99,8 @@ public class Main {
                 System.out.println("\nDo you want to continue? \nPress 0 to continue, 4 to exit: ");
                 userAns = scanner.nextLine();
                 if (userAns.equals("4")) {
-                    System.out.println("Thank you for using the library Management System! " +
-                            "\nWe hope to see you again soon!");
+                    System.out.println("Thank you for using the Ride-Sharing System ! " +
+                            "\nThank you for trusting us !");
                     break;
                 }
             }
