@@ -2,12 +2,12 @@ package ash_a9236.example;
 
 /*______________________________________________________________________________________________________________________
 
-Assignment 02
-Written by Helene Rousseau, 6229734
-For Programming 2 Section 00002 - Fall 2024
+    Assignment 02
+    Written by Helene Rousseau, 6229734
+    For Programming 2 Section 00002 - Fall 2024
 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-Explanation :
+    Explanation :
 
     This project is a ride-sharing system that links Riders and Drivers together. It checks if there are Drivers around
     the area of a rider when they request a ride and proposes the ride to the driver.
