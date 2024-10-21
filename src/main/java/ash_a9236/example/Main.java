@@ -24,6 +24,9 @@ public class Main {
 
         RideSharingSystem system = new RideSharingSystem();
         Scanner console = new Scanner(System.in);
+
+        //default Riders and Drivers to not have to add them each time
+
         system.addRider(new Rider(101, "John", "Downtown", "Airport YUL"));
         system.addRider(new Rider(102, "Sarah", "NDG", "Downtown"));
         system.addRider(new Rider(103, "Michael", "Plateau", "Westmount"));
@@ -44,23 +47,64 @@ public class Main {
         system.addDriver(new Driver(207, "Ella", "NDG", true, "Kia Soul"));
         system.addDriver(new Driver(208, "Liam", "Plateau", false, "Mazda3"));
 
+        //Actual main
+        String userAns = "";
+        do {
+            System.out.println("_________________________________________________________________");
+            System.out.println("            Welcome to the Ride-Sharing System !");
+            System.out.println("                Thank you for trusting us");
+            System.out.println("              ______________________________");
+            System.out.println("                      1. Add Rider");
+            System.out.println("                      2. Add Driver");
+            System.out.println("                      3. Request a ride");
+            System.out.println("                      4. Exit");
+            System.out.println("_________________________________________________________________\n");
 
-        System.out.println("_________________________________________________________________");
-        System.out.println("            Welcome to the Ride-Sharing System !");
-        System.out.println("                Thank you for trusting us");
-        System.out.println("              ______________________________");
-        System.out.println("  Please enter your userID");
-        int riderID = console.nextInt();
+            userAns = console.nextLine();
 
-        try {
-            if (!system.findRider(riderID).equals(null)) {
-                system.findRider(riderID).displayInfo(system.findRider(riderID).getName(), riderID);
-                System.out.println();
-                system.requestRide(riderID);
+            switch (userAns) {
+                case "1":
+                    system.manuallyAddRider();
+                    break;
+
+                case "2":
+                    system.manuallyAddDriver();
+                    break;
+
+                case "3":
+                    System.out.println("  Please enter your userID");
+                    int riderID = console.nextInt();
+                    try {
+                        if (!system.findRider(riderID).equals(null)) {
+                            system.findRider(riderID).displayInfo(system.findRider(riderID).getName(), riderID);
+                            System.out.println();
+                            system.requestRide(riderID);
+                        }
+                    }
+                    catch (NullPointerException npe) {
+                        System.out.println("No user ID matches");
+                    }
+                    break;
+
+                case "4":
+                    System.out.println("Exiting program. Thank you!");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
             }
-        }
-        catch (NullPointerException npe) {
-            System.out.println("No user ID matches");
-        }
+
+            // Prompt to continue or exit
+            if (!userAns.equals("4")) {
+                System.out.println("\nDo you want to continue? \nPress 0 to continue, 4 to exit: ");
+                userAns = scanner.nextLine();
+                if (userAns.equals("4")) {
+                    System.out.println("Thank you for using the library Management System! " +
+                            "\nWe hope to see you again soon!");
+                    break;
+                }
+            }
+
+        } while (!userAns.equals("4"));
     }
 }

@@ -51,6 +51,33 @@ public class RideSharingSystem {
         drivers.add(driver);
     }
 
+    /**
+     * Asks the user to manually add a driver to the system
+     */
+    public void manuallyAddDriver() {
+        Scanner console = new Scanner(System.in);
+        System.out.println("Please input the new driver's ID : ");
+        int userID = console.nextInt();
+        String junkLine = console.nextLine();
+        if (findDriver(userID) == null) {
+            System.out.println("Please input the driver's full name : ");
+            String name = console.nextLine();
+            System.out.println("Please input your location : ");
+            String location = console.nextLine();
+            System.out.println("Please input your vehicle : ");
+            String vehicle = console.nextLine();
+            System.out.println("Are you available at the moment ? \n(Y/N)");
+            String answer = console.next();
+            Boolean isAvailable = false;
+            if (answer.toUpperCase().equals("Y")) {
+                isAvailable = true;
+            }
+            drivers.add(new Driver(userID, name, location, isAvailable, vehicle));
+            System.out.println("Driver added successfully.");
+        } else {
+            System.out.println("Driver userID " + userID + "is already in the system.");
+        }
+
 /*----------------------------------------------------------------------------------------------------------------------
     RIDER-CLASS RELATED METHODS
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -67,6 +94,7 @@ public class RideSharingSystem {
         }
         return null;
     }
+
     /**
      * Shows the name associated with the rider's ID
      * @param userID the input rider's user ID
@@ -80,6 +108,27 @@ public class RideSharingSystem {
         }
         return "Rider not found";
     }
+
+        /**
+         * Asks the user to manually add a driver to the system
+         */
+    public void manuallyAddRider() {
+        Scanner console = new Scanner(System.in);
+        System.out.println("Please input the new Rider's ID : ");
+        int userID = console.nextInt();
+        String junkLine = console.nextLine();
+        if (findRider(userID) == null) {
+            System.out.println("Please input the rider's full name : ");
+            String name = console.nextLine();
+            System.out.println("Please input the pickup location : ");
+            String pickupLoc = console.nextLine();
+            System.out.println("Please input the dropoff location : ");
+            String dropoffLoc = console.nextLine();
+            riders.add(new Rider(userID, name, pickupLoc, dropoffLoc));
+            System.out.println("Rider added successfully.");
+        } else {
+            System.out.println("Rider userID " + userID + "is already in the system.");
+        }
 
     /**
      * adds a rider to the system
