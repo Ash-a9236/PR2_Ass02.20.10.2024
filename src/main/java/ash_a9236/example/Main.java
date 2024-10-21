@@ -97,7 +97,7 @@ public class Main {
             // Prompt to continue or exit
             if (!userAns.equals("4")) {
                 System.out.println("\nDo you want to continue? \nPress 0 to continue, 4 to exit: ");
-                userAns = scanner.nextLine();
+                userAns = console.nextLine();
                 if (userAns.equals("4")) {
                     System.out.println("Thank you for using the Ride-Sharing System ! " +
                             "\nThank you for trusting us !");

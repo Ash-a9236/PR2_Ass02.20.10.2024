@@ -78,6 +78,8 @@ public class RideSharingSystem {
             System.out.println("Driver userID " + userID + "is already in the system.");
         }
 
+    }
+
 /*----------------------------------------------------------------------------------------------------------------------
     RIDER-CLASS RELATED METHODS
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -130,6 +132,8 @@ public class RideSharingSystem {
             System.out.println("Rider userID " + userID + "is already in the system.");
         }
 
+    }
+
     /**
      * adds a rider to the system
      * @param rider the new rider
@@ -180,3 +184,4 @@ public class RideSharingSystem {
         }
     }
 }
+
