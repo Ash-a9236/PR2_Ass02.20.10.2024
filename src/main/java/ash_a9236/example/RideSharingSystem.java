@@ -74,9 +74,9 @@ public class RideSharingSystem {
             }
             drivers.add(new Driver(userID, name, location, isAvailable, vehicle));
             System.out.println("Driver added successfully.");
-        } else {
-            System.out.println("Driver userID " + userID + "is already in the system.");
-        }
+            } else {
+                System.out.println("Driver userID " + userID + "is already in the system.");
+            }
 
     }
 
